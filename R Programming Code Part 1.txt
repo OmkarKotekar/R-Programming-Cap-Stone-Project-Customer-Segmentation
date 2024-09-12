@@ -1,0 +1,26 @@
+library(tidyverse)  # data manipulation
+library(cluster)    # clustering algorithms
+install.packages("factoextra")
+library(factoextra) # clustering algorithms & visualization
+library(funModeling)
+library(Hmisc)
+df <- read.csv("../Mall_Customers.csv")
+df
+dim(df)
+df <- na.omit(df)
+df<-df[-c(1,2)]
+df
+library(visdat)
+install.packages("visdat")
+library(visdat)
+visdat::vis_miss(data.frame(df))
+library(visdat)
+visdat::vis_dat(data.frame(df))
+boxplot(df)
+plot_num(df)
+install.packages("DataExplorer")
+library(DataExplorer)
+plot_num(df)
+plot_histogram(df)
+plot(df$Age,df$Score,col="red",xlab="Age",ylab = "Spending Score", main="Age VS Spending Score")
+savehistory("E:/TCET/Sem 7/R Programming/CapStone Project/customer segmentation/CapStone Project/.Rhistory")
